@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейсы по брендингу</title>
+    <meta name="description" content="Портфолио Кейсы по брендингу. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta name="author" content="Вия Анквиц">
+    <meta property="og:title" content="Кейсы по брендингу">
+    <meta property="og:description" content="Портфолио Кейсы по брендингу. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="../../favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f0f10;
+            --surface-color: #171719;
+            --border-color: #2b2d31;
+            --text-color: #ececec;
+            --text-secondary: #a8a8a8;
+            --accent-red: #e95e5e;
+            --control-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.55;
+            min-height: 100vh;
+        }
+
+        .branding-page {
+            width: min(1040px, 92vw);
+            margin: 0 auto;
+            padding: 1.4rem 0 2.6rem;
+        }
+
+        .section-intro {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+            padding: 1.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-intro p {
+            color: var(--text-secondary);
+            max-width: 760px;
+        }
+
+        .section-kicker {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-secondary);
+            margin-bottom: 0.7rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.65rem, 2.4vw, 2.2rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .branding-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .brand-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            background: var(--surface-color);
+            position: relative;
+            transition: border-color 0.25s ease, background-color 0.25s ease;
+        }
+
+        .brand-card:hover {
+            border-color: #3a3d44;
+            background: #1b1b1e;
+        }
+
+        .brand-card.is-clickable-card {
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        .brand-card.is-clickable-card:focus-visible {
+            outline: 2px solid var(--accent-red);
+            outline-offset: 2px;
+        }
+
+        .brand-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            background: #121212;
+        }
+
+        .brand-card.is-clickable-card img {
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
+
+        .brand-card.is-clickable-card:hover img,
+        .brand-card.is-clickable-card:focus-visible img {
+            transform: scale(1.02);
+            filter: saturate(1.08);
+        }
+
+        .brand-card-content {
+            padding: 1.1rem 1.2rem 1.25rem;
+        }
+
+        .brand-card-meta {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--text-secondary);
+            margin-bottom: 0.55rem;
+        }
+
+        .brand-card h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.55rem;
+            font-weight: 500;
+        }
+
+        .brand-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0.9rem;
+        }
+
+        .brand-link {
+            color: var(--accent-red);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+            letter-spacing: 0.07em;
+            font-weight: 600;
+        }
+
+        .brand-link:hover {
+            opacity: 0.85;
+        }
+
+        .brand-card.is-clickable-card:hover .brand-link,
+        .brand-card.is-clickable-card:focus-visible .brand-link {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .coming-soon {
+            border: 1px dashed #3a3d44;
+            border-radius: 16px;
+            padding: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .brand-card,
+            .brand-card.is-clickable-card img {
+                transition: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .branding-page {
+                width: min(1040px, 94vw);
+                padding: 1rem 0 2rem;
+            }
+
+            .section-intro,
+            .brand-card-content,
+            .coming-soon {
+                padding: 1rem;
+            }
+
+            .site-nav a {
+                font-size: 0.78rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../../assets/css/footer.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="logo" href="../../index.html">ВИЯ АНКВИЦ</a>
+        <button class="burger-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="site-nav">
+            <a href="../../index.html#about" class="nav-link">Обо мне</a>
+            <a href="../../index.html#career" class="nav-link">Карьера</a>
+            <a href="../../index.html#cases" class="nav-link">Кейсы</a>
+            <a href="../../index.html#skills" class="nav-link">Навыки</a>
+            <a href="../../index.html#contact" class="btn-contact nav-link">Связаться</a>
+        </nav>
+    </header>
+
+    <main class="branding-page">
+
+        <section class="section-intro">
+            <p class="section-kicker">Раздел кейсов</p>
+            <h1 class="section-title">Брендинг</h1>
+            <p>В этом разделе собраны проекты по личному бренду, контентной системе и визуальной digital-упаковке.
+                Раздел будет пополняться новыми кейсами.</p>
+        </section>
+
+        <section class="branding-grid">
+            <article class="brand-card">
+                <img src="prostor/prostor_cover.png" alt="Обложка кейса Prostor">
+                <div class="brand-card-content">
+                    <p class="brand-card-meta">Брендинг · Недвижимость</p>
+                    <h2>Личный бренд и контент для Prostor</h2>
+                    <p>Разработка сайта-визитки, формирование контент-пакета для риелторов,
+                        запуск соцсетей, базовая реклама и лидогенерация.</p>
+                    <a class="brand-link" href="prostor/index.html">Открыть кейс &rarr;</a>
+                </div>
+            </article>
+
+            <article class="brand-card">
+                <img src="Vivi_Riviera/Vivi_Riviera_cover.png" alt="Обложка кейса бренда Vivi Riviera">
+                <div class="brand-card-content">
+                    <p class="brand-card-meta">Брендинг · Ювелирный бренд</p>
+                    <h2>Vivi Riviera</h2>
+                    <p>Полный паспорт бренда уникальных ювелирных украшений под заказ: позиционирование, УТП, ЦА, айдентика и рекламная система.</p>
+                    <a class="brand-link" href="Vivi_Riviera/index.html">Открыть кейс &rarr;</a>
+                </div>
+            </article>
+
+            <article class="brand-card">
+                <img src="Gurum/1.png" alt="Обложка кейса бренда Gurum">
+                <div class="brand-card-content">
+                    <p class="brand-card-meta">Брендинг · Food &amp; Health</p>
+                    <h2>Gurum</h2>
+                    <p>Кейс по созданию бренда полезной арбузной пасты в тюбике для
+                        спортсменов, вегетарианцев и людей, следящих за здоровьем.</p>
+                    <a class="brand-link" href="Gurum/index.html">Открыть кейс &rarr;</a>
+                </div>
+            </article>
+
+            <article class="coming-soon">
+                Новые branding-кейсы можно добавлять в папку <code>cases/branding</code>.
+            </article>
+        </section>
+            <footer class="site-footer" id="contact">
+            <div class="footer-content">
+                <h2>ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ</h2>
+                <div class="contact-links">
+                    <a href="mailto:vika.eru21@gmail.com" class="contact-link email-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        vika.eru21@gmail.com
+                    </a>
+                    <a href="tel:+79251786066" class="contact-link phone-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        +7 (925) 178-60-66
+                    </a>
+                    <a href="https://t.me/viankvits" target="_blank" class="contact-link telegram-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        @viankvits
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 ВИЯ АНКВИЦ</span>
+                <div class="socials">
+                    <a href="https://behance.net/ankvits" target="_blank">Behance</a>
+                </div>
+            </div>
+        </footer>
+</main>
+    <script>
+        const burgerBtn = document.querySelector('.burger-menu');
+        const siteHeader = document.querySelector('.site-header');
+
+        if (burgerBtn && siteHeader) {
+            burgerBtn.addEventListener('click', () => {
+                siteHeader.classList.toggle('active');
+                document.body.classList.toggle('menu-lock');
+            });
+
+            document.querySelectorAll('.site-nav .nav-link').forEach((link) => {
+                link.addEventListener('click', () => {
+                    siteHeader.classList.remove('active');
+                    document.body.classList.remove('menu-lock');
+                });
+            });
+        }
+
+        const activateCardNavigation = (cardSelector, linkSelector) => {
+            const cards = document.querySelectorAll(cardSelector);
+
+            const navigateTo = (href, event) => {
+                if (!href) return;
+
+                if (event && (event.metaKey || event.ctrlKey || event.button === 1)) {
+                    window.open(href, '_blank', 'noopener');
+                    return;
+                }
+
+                window.location.href = href;
+            };
+
+            cards.forEach(card => {
+                const link = card.querySelector(linkSelector);
+                const href = link?.getAttribute('href');
+                if (!href) return;
+
+                card.classList.add('is-clickable-card');
+                card.setAttribute('role', 'link');
+                card.setAttribute('tabindex', '0');
+                const cardTitle = card.querySelector('h2, h3')?.textContent?.trim();
+                if (cardTitle) {
+                    card.setAttribute('aria-label', `Открыть кейс: ${cardTitle}`);
+                }
+
+                card.addEventListener('click', event => {
+                    if (event.target.closest('a, button, input, textarea, select, label')) {
+                        return;
+                    }
+                    const selectedText = window.getSelection?.().toString().trim();
+                    if (selectedText) return;
+                    navigateTo(href, event);
+                });
+
+                card.addEventListener('auxclick', event => {
+                    if (event.button !== 1) return;
+                    if (event.target.closest('a, button, input, textarea, select, label')) {
+                        return;
+                    }
+                    event.preventDefault();
+                    navigateTo(href, event);
+                });
+
+                card.addEventListener('keydown', event => {
+                    if (event.key !== 'Enter' && event.key !== ' ') return;
+                    event.preventDefault();
+                    navigateTo(href, event);
+                });
+            });
+        };
+
+        activateCardNavigation('.brand-card', '.brand-link');
+    </script>
+</body>
+
+</html>

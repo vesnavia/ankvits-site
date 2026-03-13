@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: Инфографика ко Дню матери</title>
+    <meta name="description" content="Портфолио Кейс: Инфографика ко Дню матери. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta name="author" content="Вия Анквиц">
+    <meta property="og:title" content="Кейс: Инфографика ко Дню матери">
+    <meta property="og:description" content="Портфолио Кейс: Инфографика ко Дню матери. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="../../../favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0f;
+            --surface-color: #17181b;
+            --border-color: #2d3035;
+            --text-color: #f0f0f0;
+            --text-secondary: #a8adb5;
+            --accent-red: #df6464;
+            --contact-red: #d33a3a;
+            --control-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.55;
+            min-height: 100vh;
+        }
+
+                .case-page {
+            max-width: 1600px;
+            margin: 0 auto;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            min-height: 100vh;
+        }
+
+        .menu-lock {
+            overflow: hidden;
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.02rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: color 0.25s ease;
+        }
+
+        .site-nav a:not(.btn-contact):hover {
+            color: var(--text-color);
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.1;
+            padding: 0.55rem 1.2rem;
+            border: 1px solid var(--contact-red);
+            background: linear-gradient(140deg, #d33a3a 0%, #b72a2a 100%);
+            color: #ffffff !important;
+            border-radius: var(--control-radius);
+            box-shadow: 0 10px 24px rgba(211, 47, 47, 0.24);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .site-nav .btn-contact:hover {
+            background: linear-gradient(140deg, #de4343 0%, #c12b2b 100%);
+            border-color: #de4343;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(211, 47, 47, 0.3);
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .burger-menu span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .site-header.active .burger-menu span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .site-header.active .burger-menu span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .site-header.active .burger-menu span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .case-intro {
+            width: min(1220px, 94vw);
+            margin: 0 auto;
+            padding: 0.5rem 0 1rem;
+        }
+
+        .intro-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+            padding: 1.2rem;
+        }
+
+        .intro-kicker {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
+            margin-bottom: 0.7rem;
+        }
+
+        .intro-card h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-weight: 300;
+            margin-bottom: 1.2rem;
+            letter-spacing: -2px;
+        }
+
+        .intro-card p {
+            color: var(--text-secondary);
+        }
+
+        .infographics-layout {
+            width: min(1220px, 94vw);
+            margin: 0 auto;
+            padding: 0.4rem 0 2rem;
+            display: grid;
+            grid-template-columns: minmax(320px, 720px) minmax(280px, 1fr);
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .infographics-visual {
+            width: 100%;
+            justify-self: start;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: #09090b;
+            padding: 0.6rem;
+        }
+
+        .infographics-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        .details-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: var(--surface-color);
+            padding: 1.05rem 1.2rem 1.15rem;
+            min-height: 100%;
+        }
+
+        .details-card h2 {
+            font-size: 0.86rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-red);
+            margin-bottom: 0.7rem;
+        }
+
+        .details-text {
+            color: var(--text-secondary);
+            margin-bottom: 0.9rem;
+        }
+
+        .details-subtitle {
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+        }
+
+        .details-list {
+            margin-left: 1rem;
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        .details-list li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .case-footer {
+            width: min(1220px, 94vw);
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: var(--surface-color);
+            padding: 0.95rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 0.8rem;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.86rem;
+        }
+
+        .case-footer a {
+            color: var(--accent-red);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 980px) {
+            .infographics-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 1rem;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+
+            .site-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.8rem;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 100;
+            }
+
+            .site-header.active .site-nav {
+                transform: translateY(0);
+            }
+
+            .site-nav a {
+                font-size: 1.08rem;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .case-intro,
+            .infographics-layout,
+            .case-footer {
+                width: min(1220px, 95vw);
+            }
+
+            .case-footer {
+                margin-bottom: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../../assets/css/footer.css">
+</head>
+
+<body>
+    <main class="case-page">
+        <header class="site-header">
+            <a class="logo" href="../../../index.html">ВИЯ АНКВИЦ</a>
+            <button class="burger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav">
+                <a href="../../../index.html#about" class="nav-link">Обо мне</a>
+                <a href="../../../index.html#career" class="nav-link">Карьера</a>
+                <a href="../../../index.html#cases" class="nav-link">Кейсы</a>
+                <a href="../../../index.html#skills" class="nav-link">Навыки</a>
+                <a href="../../../index.html#contact" class="btn-contact nav-link">Связаться</a>
+            </nav>
+        </header>
+
+        <section class="case-intro">
+            <article class="intro-card">
+                <p class="intro-kicker">Дизайн · Инфографика</p>
+                <h1>Инфографика ко Дню матери</h1>
+                <p>Душевная инфографика, которая отражает благодарность ребенка к матери. Проект подготовлен ко Дню
+                    матери в 2022 году.</p>
+            </article>
+        </section>
+
+        <section class="infographics-layout">
+            <article class="infographics-visual">
+                <img src="Infographics.png" alt="Инфографика ко Дню матери, 2022">
+            </article>
+            <article class="details-card">
+                <h2>Описание кейса</h2>
+                <p class="details-text">Работа выполнена в формате эмоциональной инфографики-послания.
+                    Через визуальные и текстовые акценты передается теплое, искреннее отношение ребенка к маме.</p>
+                <p class="details-subtitle">Что сделано</p>
+                <ul class="details-list">
+                    <li>Разработана идея и структура инфографики ко Дню матери.</li>
+                    <li>Сформирован эмоциональный и содержательный текстовый блок.</li>
+                    <li>Собран визуальный дизайн с акцентом на атмосферу благодарности.</li>
+                    <li>Подготовлен финальный макет в PNG-формате (2022 год).</li>
+                </ul>
+            </article>
+        </section>
+
+        
+            <footer class="site-footer" id="contact">
+            <div class="footer-content">
+                <h2>ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ</h2>
+                <div class="contact-links">
+                    <a href="mailto:vika.eru21@gmail.com" class="contact-link email-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        vika.eru21@gmail.com
+                    </a>
+                    <a href="tel:+79251786066" class="contact-link phone-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        +7 (925) 178-60-66
+                    </a>
+                    <a href="https://t.me/viankvits" target="_blank" class="contact-link telegram-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        @viankvits
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 ВИЯ АНКВИЦ</span>
+                <div class="socials">
+                    <a href="https://behance.net/ankvits" target="_blank">Behance</a>
+                </div>
+            </div>
+        </footer>
+</main>
+    <script>
+        const burgerBtn = document.querySelector('.burger-menu');
+        const siteHeader = document.querySelector('.site-header');
+
+        if (burgerBtn && siteHeader) {
+            burgerBtn.addEventListener('click', () => {
+                siteHeader.classList.toggle('active');
+                document.body.classList.toggle('menu-lock');
+            });
+
+            document.querySelectorAll('.site-nav .nav-link').forEach((link) => {
+                link.addEventListener('click', () => {
+                    siteHeader.classList.remove('active');
+                    document.body.classList.remove('menu-lock');
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

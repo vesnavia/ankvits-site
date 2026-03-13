@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: ICAC</title>
+    <meta name="description" content="Портфолио Кейс: ICAC. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta name="author" content="Вия Анквиц">
+    <meta property="og:title" content="Кейс: ICAC">
+    <meta property="og:description" content="Портфолио Кейс: ICAC. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="../../../favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0f;
+            --surface-color: #17181b;
+            --border-color: #2d3035;
+            --text-color: #f0f0f0;
+            --text-secondary: #a8adb5;
+            --accent-red: #df6464;
+            --contact-red: #d33a3a;
+            --control-radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.55;
+            min-height: 100vh;
+        }
+
+                .case-page {
+            max-width: 1600px;
+            margin: 0 auto;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            min-height: 100vh;
+        }
+
+        .menu-lock {
+            overflow: hidden;
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.02rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: color 0.25s ease;
+        }
+
+        .site-nav a:not(.btn-contact):hover {
+            color: var(--text-color);
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.1;
+            padding: 0.55rem 1.2rem;
+            border: 1px solid var(--contact-red);
+            background: linear-gradient(140deg, #d33a3a 0%, #b72a2a 100%);
+            color: #ffffff !important;
+            border-radius: var(--control-radius);
+            box-shadow: 0 10px 24px rgba(211, 47, 47, 0.24);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .site-nav .btn-contact:hover {
+            background: linear-gradient(140deg, #de4343 0%, #c12b2b 100%);
+            border-color: #de4343;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(211, 47, 47, 0.3);
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .burger-menu span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .site-header.active .burger-menu span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .site-header.active .burger-menu span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .site-header.active .burger-menu span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .case-intro {
+            width: min(1220px, 94vw);
+            margin: 0 auto;
+            padding: 0.5rem 0 1rem;
+        }
+
+        .intro-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+            padding: 1.2rem;
+        }
+
+        .intro-kicker {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
+            margin-bottom: 0.7rem;
+        }
+
+        .intro-card h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-weight: 300;
+            margin-bottom: 1.2rem;
+            letter-spacing: -2px;
+        }
+
+        .intro-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .facts {
+            width: min(1220px, 94vw);
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            padding: 0 0 1rem;
+        }
+
+        .facts span {
+            border: 1px solid var(--border-color);
+            border-radius: var(--control-radius);
+            background: var(--surface-color);
+            color: var(--text-secondary);
+            padding: 0.45rem 0.82rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+        }
+
+        .icac-showcase {
+            width: min(1220px, 94vw);
+            margin: 0 auto;
+            padding-bottom: 2rem;
+        }
+
+        .icac-controls {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.62rem;
+            margin-bottom: 0.95rem;
+        }
+
+        .icac-controls-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
+            margin: 0 0 0.45rem 0.18rem;
+        }
+
+        .icac-controls--top {
+            position: sticky;
+            top: 0.65rem;
+            z-index: 30;
+            padding: 0.68rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+                rgba(18, 18, 21, 0.92);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+        }
+
+        .icac-button {
+            border: 1px solid #3a3f47;
+            border-radius: var(--control-radius);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+            color: #d4d8de;
+            padding: 0.74rem 0.84rem;
+            font-family: inherit;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.52rem;
+            justify-content: flex-start;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .icac-button:hover {
+            border-color: #8e98a8;
+            color: #f2f5f8;
+            transform: translateY(-1px);
+        }
+
+        .icac-button:focus-visible {
+            outline: none;
+            border-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(223, 100, 100, 0.35);
+        }
+
+        .icac-button-code {
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #e8ecf2;
+            border: 1px solid rgba(255, 255, 255, 0.34);
+            border-radius: var(--control-radius);
+            padding: 0.18rem 0.46rem;
+            background: rgba(255, 255, 255, 0.06);
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .icac-button-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .icac-button.is-active {
+            background: linear-gradient(135deg, #df6464, #c04747);
+            color: #fff;
+            border-color: #ef9a9a;
+            box-shadow:
+                0 10px 24px rgba(223, 100, 100, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.28);
+        }
+
+        .icac-button.is-active .icac-button-code {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.62);
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .icac-item {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            background: #0f1012;
+            animation: icac-item-reveal 0.26s ease both;
+        }
+
+        .icac-item.is-hidden {
+            display: none;
+        }
+
+        .icac-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #111114;
+        }
+
+        .icac-caption {
+            padding: 0.75rem 0.85rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .icac-item--marketing {
+            background: #0f1012;
+        }
+
+        .marketing-panel {
+            padding: 0.9rem;
+        }
+
+        .marketing-header {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: var(--surface-color);
+            padding: 1rem 1.1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .marketing-kicker {
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.48rem;
+        }
+
+        .marketing-header h2 {
+            font-size: clamp(1.15rem, 2vw, 1.55rem);
+            font-weight: 600;
+            margin-bottom: 0.55rem;
+        }
+
+        .marketing-header p {
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+        }
+
+        .marketing-grid {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .marketing-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            min-height: 240px;
+            background: #0f1012;
+        }
+
+        .marketing-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(110deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            background-size: 210% 100%;
+            animation: marketing-loading 1.25s linear infinite;
+        }
+
+        .marketing-card.is-loaded::before {
+            display: none;
+        }
+
+        .marketing-number {
+            position: absolute;
+            left: 0.74rem;
+            top: 0.72rem;
+            z-index: 2;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #efefef;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--control-radius);
+            padding: 0.3rem 0.58rem;
+            background: rgba(0, 0, 0, 0.34);
+            backdrop-filter: blur(6px);
+        }
+
+        .marketing-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            background: #111114;
+            position: relative;
+            z-index: 1;
+        }
+
+        .marketing-card.is-loaded img {
+            opacity: 1;
+        }
+
+        .case-footer {
+            width: min(1220px, 94vw);
+            margin: 0 auto;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: var(--surface-color);
+            padding: 0.95rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 0.8rem;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.86rem;
+        }
+
+        .case-footer a {
+            color: var(--accent-red);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        @keyframes marketing-loading {
+            from {
+                background-position: 200% 0;
+            }
+
+            to {
+                background-position: -200% 0;
+            }
+        }
+
+        @keyframes icac-item-reveal {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 980px) {
+            .icac-controls {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 1rem;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+
+            .site-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.8rem;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 100;
+            }
+
+            .site-header.active .site-nav {
+                transform: translateY(0);
+            }
+
+            .site-nav a {
+                font-size: 1.08rem;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .case-intro,
+            .facts,
+            .icac-showcase,
+            .case-footer {
+                width: min(1220px, 95vw);
+            }
+
+            .case-footer {
+                margin-bottom: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .icac-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .icac-controls--top {
+                top: 0.45rem;
+                padding: 0.55rem;
+            }
+
+            .icac-button {
+                padding: 0.7rem 0.78rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../../assets/css/footer.css">
+</head>
+
+<body>
+    <main class="case-page">
+        <header class="site-header">
+            <a class="logo" href="../../../index.html">ВИЯ АНКВИЦ</a>
+            <button class="burger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav">
+                <a href="../../../index.html#about" class="nav-link">Обо мне</a>
+                <a href="../../../index.html#career" class="nav-link">Карьера</a>
+                <a href="../../../index.html#cases" class="nav-link">Кейсы</a>
+                <a href="../../../index.html#skills" class="nav-link">Навыки</a>
+                <a href="../../../index.html#contact" class="btn-contact nav-link">Связаться</a>
+            </nav>
+        </header>
+
+        <section class="case-intro">
+            <article class="intro-card">
+                <p class="intro-kicker">Дизайн · Образование · Международный проект</p>
+                <h1>ICAC — версии главной страницы для запуска института на Хайнане</h1>
+                <p>Проект по разработке главной страницы для российского института, открывающегося в Китае
+                    (остров Хайнань).</p>
+                <p>На этапе исследования был проведен анализ китайских образовательных сайтов, по итогам которого
+                    сформирована целевая структура сайта. На базе этой структуры и утвержденного брендбука
+                    разработаны две локализованные версии главной страницы: китайская и европейская.</p>
+            </article>
+        </section>
+
+        <section class="facts" aria-label="Факты проекта">
+            <span>UX-анализ китайских образовательных сайтов</span>
+            <span>Проектирование структуры главной страницы</span>
+            <span>Две локализованные версии: China / English</span>
+        </section>
+
+        <section class="icac-showcase">
+            <p class="icac-controls-label">Разделы кейса</p>
+            <div class="icac-controls icac-controls--top" aria-label="Переключение версий страницы">
+                <button class="icac-button is-active" type="button" data-icac-target="china" aria-pressed="true">
+                    <span class="icac-button-code">CN</span>
+                    <span class="icac-button-text">China version</span>
+                </button>
+                <button class="icac-button" type="button" data-icac-target="english" aria-pressed="false">
+                    <span class="icac-button-code">EN</span>
+                    <span class="icac-button-text">English version</span>
+                </button>
+                <button class="icac-button" type="button" data-icac-target="structure" aria-pressed="false">
+                    <span class="icac-button-code">UX</span>
+                    <span class="icac-button-text">Structure</span>
+                </button>
+                <button class="icac-button" type="button" data-icac-target="marketing" aria-pressed="false">
+                    <span class="icac-button-code">MKT</span>
+                    <span class="icac-button-text">Marketing plan</span>
+                </button>
+            </div>
+
+            <figure class="icac-item" data-icac-page="china">
+                <img src="optimized/china-1280.jpg"
+                    srcset="optimized/china-640.jpg 640w, optimized/china-960.jpg 960w, optimized/china-1280.jpg 1280w"
+                    sizes="(max-width: 1220px) 94vw, 1220px"
+                    decoding="async"
+                    alt="Китайская версия главной страницы ICAC">
+                <figcaption class="icac-caption">Китайская версия главной страницы с учетом локальных визуальных и
+                    поведенческих паттернов аудитории.</figcaption>
+            </figure>
+
+            <figure class="icac-item is-hidden" data-icac-page="english" hidden>
+                <img data-src="optimized/english-1280.jpg"
+                    data-srcset="optimized/english-640.jpg 640w, optimized/english-960.jpg 960w, optimized/english-1280.jpg 1280w"
+                    data-sizes="(max-width: 1220px) 94vw, 1220px"
+                    alt="Европейская версия главной страницы ICAC">
+                <figcaption class="icac-caption">Европейская версия главной страницы для международной аудитории
+                    проекта.</figcaption>
+            </figure>
+
+            <figure class="icac-item is-hidden" data-icac-page="structure" hidden>
+                <img data-src="structure.png"
+                    alt="Структура главной страницы ICAC">
+                <figcaption class="icac-caption">Структура сайта, сформированная на базе предварительного
+                    конкурентного и UX-анализа.</figcaption>
+            </figure>
+
+            <article class="icac-item icac-item--marketing is-hidden" data-icac-page="marketing" hidden>
+                <div class="marketing-panel">
+                    <article class="marketing-header">
+                        <p class="marketing-kicker">Дополнительный раздел</p>
+                        <h2>Маркетинговый план выхода колледжа на китайский рынок</h2>
+                    </article>
+
+                    <div class="marketing-grid">
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 01</p>
+                            <img data-marketing-src="marketing/1.png" alt="Маркетинговый план ICAC — слайд 1">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 02</p>
+                            <img data-marketing-src="marketing/2.png" alt="Маркетинговый план ICAC — слайд 2">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 03</p>
+                            <img data-marketing-src="marketing/3.png" alt="Маркетинговый план ICAC — слайд 3">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 04</p>
+                            <img data-marketing-src="marketing/4.png" alt="Маркетинговый план ICAC — слайд 4">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 05</p>
+                            <img data-marketing-src="marketing/5.png" alt="Маркетинговый план ICAC — слайд 5">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 06</p>
+                            <img data-marketing-src="marketing/6.png" alt="Маркетинговый план ICAC — слайд 6">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 07</p>
+                            <img data-marketing-src="marketing/7.png" alt="Маркетинговый план ICAC — слайд 7">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 08</p>
+                            <img data-marketing-src="marketing/8.png" alt="Маркетинговый план ICAC — слайд 8">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 09</p>
+                            <img data-marketing-src="marketing/9.png" alt="Маркетинговый план ICAC — слайд 9">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 10</p>
+                            <img data-marketing-src="marketing/10.png" alt="Маркетинговый план ICAC — слайд 10">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 11</p>
+                            <img data-marketing-src="marketing/11.png" alt="Маркетинговый план ICAC — слайд 11">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 12</p>
+                            <img data-marketing-src="marketing/12.png" alt="Маркетинговый план ICAC — слайд 12">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 13</p>
+                            <img data-marketing-src="marketing/13.png" alt="Маркетинговый план ICAC — слайд 13">
+                        </article>
+                        <article class="marketing-card">
+                            <p class="marketing-number">План 14</p>
+                            <img data-marketing-src="marketing/14.png" alt="Маркетинговый план ICAC — слайд 14">
+                        </article>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        
+            <footer class="site-footer" id="contact">
+            <div class="footer-content">
+                <h2>ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ</h2>
+                <div class="contact-links">
+                    <a href="mailto:vika.eru21@gmail.com" class="contact-link email-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        vika.eru21@gmail.com
+                    </a>
+                    <a href="tel:+79251786066" class="contact-link phone-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        +7 (925) 178-60-66
+                    </a>
+                    <a href="https://t.me/viankvits" target="_blank" class="contact-link telegram-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        @viankvits
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 ВИЯ АНКВИЦ</span>
+                <div class="socials">
+                    <a href="https://behance.net/ankvits" target="_blank">Behance</a>
+                </div>
+            </div>
+        </footer>
+</main>
+    <script>
+        const burgerBtn = document.querySelector('.burger-menu');
+        const siteHeader = document.querySelector('.site-header');
+
+        if (burgerBtn && siteHeader) {
+            burgerBtn.addEventListener('click', () => {
+                siteHeader.classList.toggle('active');
+                document.body.classList.toggle('menu-lock');
+            });
+
+            document.querySelectorAll('.site-nav .nav-link').forEach((link) => {
+                link.addEventListener('click', () => {
+                    siteHeader.classList.remove('active');
+                    document.body.classList.remove('menu-lock');
+                });
+            });
+        }
+
+        const icacShowcase = document.querySelector('.icac-showcase');
+
+        if (icacShowcase) {
+            const icacButtons = Array.from(icacShowcase.querySelectorAll('.icac-button[data-icac-target]'));
+            const icacPages = Array.from(icacShowcase.querySelectorAll('.icac-item[data-icac-page]'));
+
+            const ensurePageLoaded = (page) => {
+                if (!page) return;
+                const img = page.querySelector('img[data-src]');
+                if (!img) return;
+                img.src = img.dataset.src;
+                if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+                if (img.dataset.sizes) img.sizes = img.dataset.sizes;
+                img.decoding = 'async';
+                img.removeAttribute('data-src');
+            };
+
+            const setActiveIcacPage = (targetPage) => {
+                icacPages.forEach((page) => {
+                    const isActive = page.dataset.icacPage === targetPage;
+                    if (isActive) ensurePageLoaded(page);
+                    page.hidden = !isActive;
+                    page.classList.toggle('is-hidden', !isActive);
+                });
+
+                icacButtons.forEach((button) => {
+                    const isActive = button.dataset.icacTarget === targetPage;
+                    button.classList.toggle('is-active', isActive);
+                    button.setAttribute('aria-pressed', String(isActive));
+                    if (isActive) {
+                        button.setAttribute('aria-current', 'page');
+                    } else {
+                        button.removeAttribute('aria-current');
+                    }
+                });
+            };
+
+            icacButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const targetPage = button.dataset.icacTarget;
+                    setActiveIcacPage(targetPage);
+                });
+
+                button.addEventListener('keydown', (event) => {
+                    const controls = button.closest('.icac-controls');
+                    if (!controls) return;
+                    const groupButtons = Array.from(controls.querySelectorAll('.icac-button[data-icac-target]'));
+                    if (!groupButtons.length) return;
+
+                    const currentIndex = groupButtons.indexOf(button);
+                    if (currentIndex < 0) return;
+
+                    let nextIndex = currentIndex;
+                    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+                        nextIndex = (currentIndex + 1) % groupButtons.length;
+                    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+                        nextIndex = (currentIndex - 1 + groupButtons.length) % groupButtons.length;
+                    } else if (event.key === 'Home') {
+                        nextIndex = 0;
+                    } else if (event.key === 'End') {
+                        nextIndex = groupButtons.length - 1;
+                    } else {
+                        return;
+                    }
+
+                    event.preventDefault();
+                    const nextButton = groupButtons[nextIndex];
+                    if (!nextButton) return;
+                    nextButton.focus();
+                    nextButton.click();
+                });
+            });
+
+            const initialButton = icacShowcase.querySelector('.icac-button.is-active[data-icac-target]') || icacButtons[0];
+            if (initialButton) setActiveIcacPage(initialButton.dataset.icacTarget);
+        }
+
+        const marketingImages = Array.from(document.querySelectorAll('.marketing-card img[data-marketing-src]'));
+
+        const buildMarketingResponsiveImage = (source) => {
+            const match = source.match(/^marketing\/(\d+)\.png$/i);
+            if (!match) return null;
+            const id = match[1];
+            return {
+                src: `marketing/optimized/${id}-1280.jpg`,
+                srcset: `marketing/optimized/${id}-640.jpg 640w, marketing/optimized/${id}-960.jpg 960w, marketing/optimized/${id}-1280.jpg 1280w`,
+                sizes: '(max-width: 620px) 95vw, (max-width: 1220px) 94vw, 1220px'
+            };
+        };
+
+        const loadMarketingImage = (img) => {
+            const src = img.getAttribute('data-marketing-src');
+            if (!src) return;
+
+            const responsive = buildMarketingResponsiveImage(src);
+            if (responsive) {
+                img.src = responsive.src;
+                img.srcset = responsive.srcset;
+                img.sizes = responsive.sizes;
+                img.decoding = 'async';
+                img.setAttribute('data-marketing-fallback-src', src);
+            } else {
+                img.src = src;
+            }
+            img.removeAttribute('data-marketing-src');
+
+            img.addEventListener('load', () => {
+                const card = img.closest('.marketing-card');
+                if (card) card.classList.add('is-loaded');
+            }, { once: true });
+
+            const handleMarketingError = () => {
+                const fallbackSrc = img.getAttribute('data-marketing-fallback-src');
+                if (fallbackSrc) {
+                    img.removeAttribute('srcset');
+                    img.removeAttribute('sizes');
+                    img.removeAttribute('data-marketing-fallback-src');
+                    img.src = fallbackSrc;
+                    return;
+                }
+                img.removeEventListener('error', handleMarketingError);
+            };
+
+            img.addEventListener('error', handleMarketingError);
+        };
+
+        if ('IntersectionObserver' in window) {
+            const marketingObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    const img = entry.target;
+                    loadMarketingImage(img);
+                    obs.unobserve(img);
+                });
+            }, { rootMargin: '280px 0px' });
+
+            marketingImages.forEach((img) => marketingObserver.observe(img));
+        } else {
+            marketingImages.forEach(loadMarketingImage);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: Gurum</title>
+    <meta name="description" content="Портфолио Кейс: Gurum. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta name="author" content="Вия Анквиц">
+    <meta property="og:title" content="Кейс: Gurum">
+    <meta property="og:description" content="Портфолио Кейс: Gurum. Вия Анквиц — специалист по связям с общественностью и дизайну.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="../../../favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0d0f;
+            --surface-color: #17181b;
+            --border-color: #2d3035;
+            --text-color: #f0f0f0;
+            --text-secondary: #a8adb5;
+            --accent-red: #df6464;
+            --contact-red: #d33a3a;
+            --control-radius: 12px;
+            --content-width: min(1220px, 94vw);
+            --content-width-mobile: min(1220px, 95vw);
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-7: 2rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+                .case-page {
+            max-width: 1600px;
+            margin: 0 auto;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            min-height: 100vh;
+        }
+
+        .menu-lock {
+            overflow: hidden;
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            margin-bottom: var(--space-2);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.02rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .site-nav a {
+            text-decoration: none;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            transition: color 0.25s ease;
+        }
+
+        .site-nav a:not(.btn-contact):hover {
+            color: var(--text-color);
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.1;
+            padding: var(--space-2) var(--space-5);
+            border: 1px solid var(--contact-red);
+            background: linear-gradient(140deg, #d33a3a 0%, #b72a2a 100%);
+            color: #ffffff !important;
+            border-radius: var(--control-radius);
+            box-shadow: 0 10px 24px rgba(211, 47, 47, 0.24);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .case-intro,
+        .facts-grid,
+        .slides-wrap,
+        .case-footer {
+            width: var(--content-width);
+            margin: 0 auto;
+        }
+
+        .site-nav .btn-contact:hover {
+            background: linear-gradient(140deg, #de4343 0%, #c12b2b 100%);
+            border-color: #de4343;
+            color: #ffffff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(211, 47, 47, 0.3);
+        }
+
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .burger-menu span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s;
+        }
+
+        .site-header.active .burger-menu span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .site-header.active .burger-menu span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .site-header.active .burger-menu span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .case-intro {
+            padding: var(--space-4) 0 var(--space-3);
+        }
+
+        .intro-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+            padding: var(--space-6);
+        }
+
+        .intro-kicker {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-3);
+        }
+
+        .intro-card h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-weight: 300;
+            margin-bottom: 1.2rem;
+            letter-spacing: -2px;
+        }
+
+        .intro-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-3);
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .facts-grid {
+            padding: var(--space-3) 0 var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--space-4);
+        }
+
+        .fact-card {
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            background: var(--surface-color);
+            padding: var(--space-4);
+        }
+
+        .fact-label {
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.72rem;
+            margin-bottom: var(--space-2);
+        }
+
+        .fact-value {
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .slides-wrap {
+            padding: var(--space-4) 0 var(--space-7);
+        }
+
+        .slides-title {
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.74rem;
+            margin-bottom: var(--space-4);
+        }
+
+        .slides-list {
+            display: grid;
+            gap: var(--space-4);
+        }
+
+        .slide-card {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: #0f1012;
+            overflow: hidden;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .slide-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(110deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            background-size: 210% 100%;
+            animation: pulse-loading 1.25s linear infinite;
+        }
+
+        .slide-card.is-loaded::before {
+            display: none;
+        }
+
+        .slide-number {
+            position: absolute;
+            left: var(--space-3);
+            top: var(--space-3);
+            z-index: 2;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #efefef;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--control-radius);
+            padding: 0.32rem 0.62rem;
+            background: rgba(0, 0, 0, 0.32);
+            backdrop-filter: blur(6px);
+        }
+
+        .slide-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .slide-card.is-loaded img {
+            opacity: 1;
+        }
+
+        .case-footer {
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            background: var(--surface-color);
+            padding: var(--space-4) var(--space-5);
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-4);
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.86rem;
+            margin-bottom: var(--space-7);
+        }
+
+        .case-footer a {
+            color: var(--accent-red);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        @keyframes pulse-loading {
+            from {
+                background-position: 200% 0;
+            }
+
+            to {
+                background-position: -200% 0;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .facts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 1rem;
+            }
+
+            .burger-menu {
+                display: flex;
+            }
+
+            .site-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.8rem;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 100;
+            }
+
+            .site-header.active .site-nav {
+                transform: translateY(0);
+            }
+
+            .site-nav a {
+                font-size: 1.08rem;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .case-intro,
+            .facts-grid,
+            .slides-wrap,
+            .case-footer {
+                width: var(--content-width-mobile);
+            }
+
+            .case-footer {
+                margin-bottom: var(--space-5);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-3);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../../../assets/css/footer.css">
+</head>
+
+<body>
+    <main class="case-page">
+        <header class="site-header">
+            <a class="logo" href="../../../index.html">ВИЯ АНКВИЦ</a>
+            <button class="burger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav">
+                <a href="../../../index.html#about" class="nav-link">Обо мне</a>
+                <a href="../../../index.html#career" class="nav-link">Карьера</a>
+                <a href="../../../index.html#cases" class="nav-link">Кейсы</a>
+                <a href="../../../index.html#skills" class="nav-link">Навыки</a>
+                <a href="../../../index.html#contact" class="btn-contact nav-link">Связаться</a>
+            </nav>
+        </header>
+
+        <section class="case-intro">
+            <article class="intro-card">
+                <p class="intro-kicker">Брендинг · Food &amp; Health · 2022</p>
+                <h1>Gurum — бренд полезной арбузной пасты в тюбике</h1>
+                <p>Кейс по созданию бренда Gurum для спортсменов, вегетарианцев и людей, которым важно
+                    сбалансированное питание и польза продукта.</p>
+                <p>Арбузная паста — универсальный и вкусный продукт. Она является источником жирных кислот,
+                    помогает укреплять сердечную мышцу, способствует снижению уровня холестерина
+                    и положительно влияет на нервную систему.</p>
+                <p>Продукт содержит комплекс витаминов и минералов: A, C, E, B1, B2, B6, B9, PP, магний, калий,
+                    кальций, фосфор, железо и натрий. Такой состав поддерживает организм, помогает быстрее насыщаться
+                    и не переедать.</p>
+                <p>В производстве использована технология, вдохновленная итальянским подходом:
+                    охлажденная мякоть проваривается на основе сока, благодаря чему получается нежная паста.</p>
+            </article>
+        </section>
+
+        <section class="facts-grid">
+            <article class="fact-card">
+                <p class="fact-label">Целевая аудитория</p>
+                <p class="fact-value">Спортсмены, вегетарианцы и люди, следящие за здоровьем.</p>
+            </article>
+            <article class="fact-card">
+                <p class="fact-label">Продукт</p>
+                <p class="fact-value">Бренд полезной арбузной пасты в тюбике.</p>
+            </article>
+            <article class="fact-card">
+                <p class="fact-label">Год</p>
+                <p class="fact-value">2022</p>
+            </article>
+        </section>
+
+        <section class="slides-wrap">
+            <p class="slides-title">Материалы кейса · последовательность 1–9</p>
+            <div class="slides-list">
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 01</p>
+                    <img loading="lazy" decoding="async" data-src="1.png" alt="Кейс Gurum — слайд 1">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 02</p>
+                    <img loading="lazy" decoding="async" data-src="2.png" alt="Кейс Gurum — слайд 2">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 03</p>
+                    <img loading="lazy" decoding="async" data-src="3.png" alt="Кейс Gurum — слайд 3">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 04</p>
+                    <img loading="lazy" decoding="async" data-src="4.png" alt="Кейс Gurum — слайд 4">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 05</p>
+                    <img loading="lazy" decoding="async" data-src="5.png" alt="Кейс Gurum — слайд 5">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 06</p>
+                    <img loading="lazy" decoding="async" data-src="6.png" alt="Кейс Gurum — слайд 6">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 07</p>
+                    <img loading="lazy" decoding="async" data-src="7.png" alt="Кейс Gurum — слайд 7">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 08</p>
+                    <img loading="lazy" decoding="async" data-src="8.png" alt="Кейс Gurum — слайд 8">
+                </article>
+                <article class="slide-card">
+                    <p class="slide-number">Слайд 09</p>
+                    <img loading="lazy" decoding="async" data-src="9.png" alt="Кейс Gurum — слайд 9">
+                </article>
+            </div>
+        </section>
+
+        
+            <footer class="site-footer" id="contact">
+            <div class="footer-content">
+                <h2>ДАВАЙТЕ РАБОТАТЬ ВМЕСТЕ</h2>
+                <div class="contact-links">
+                    <a href="mailto:vika.eru21@gmail.com" class="contact-link email-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        vika.eru21@gmail.com
+                    </a>
+                    <a href="tel:+79251786066" class="contact-link phone-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        +7 (925) 178-60-66
+                    </a>
+                    <a href="https://t.me/viankvits" target="_blank" class="contact-link telegram-link">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                        @viankvits
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 ВИЯ АНКВИЦ</span>
+                <div class="socials">
+                    <a href="https://behance.net/ankvits" target="_blank">Behance</a>
+                </div>
+            </div>
+        </footer>
+</main>
+    <script>
+        const burgerBtn = document.querySelector('.burger-menu');
+        const siteHeader = document.querySelector('.site-header');
+
+        if (burgerBtn && siteHeader) {
+            burgerBtn.addEventListener('click', () => {
+                siteHeader.classList.toggle('active');
+                document.body.classList.toggle('menu-lock');
+            });
+
+            document.querySelectorAll('.site-nav .nav-link').forEach((link) => {
+                link.addEventListener('click', () => {
+                    siteHeader.classList.remove('active');
+                    document.body.classList.remove('menu-lock');
+                });
+            });
+        }
+
+        const lazyImages = Array.from(document.querySelectorAll('.slide-card img[data-src]'));
+
+        const loadImage = (img) => {
+            const src = img.getAttribute('data-src');
+            if (!src) return;
+            const card = img.closest('.slide-card');
+            img.src = src;
+            img.removeAttribute('data-src');
+            img.addEventListener('load', () => {
+                if (card) card.classList.add('is-loaded');
+            }, { once: true });
+            img.addEventListener('error', () => {
+                if (card) card.classList.add('is-loaded');
+            }, { once: true });
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    const img = entry.target;
+                    loadImage(img);
+                    obs.unobserve(img);
+                });
+            }, { rootMargin: '280px 0px' });
+
+            lazyImages.forEach((img) => observer.observe(img));
+        } else {
+            lazyImages.forEach(loadImage);
+        }
+    </script>
+</body>
+
+</html>
